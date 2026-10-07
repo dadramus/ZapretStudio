@@ -1,0 +1,52 @@
+﻿ZAPRET STUDIO
+Copyright (c) 2026 dadramus. Все права защищены. All rights reserved.
+
+АВТОР И ПРАВООБЛАДАТЕЛЬ
+Автором и единственным правообладателем программы Zapret Studio является dadramus.
+Программа Zapret Studio — это исходный код файлов ZapretStudio.ps1, ZapretStudio.bat и ZapretStudio.vbs,
+дизайн и оформление интерфейса, тексты (включая инструкцию и README), значок ZapretStudio.ico
+и название «Zapret Studio».
+
+ОХРАНА ПРАВ
+Авторство и исключительные права охраняются законодательством Российской Федерации
+(часть IV Гражданского кодекса РФ) и международными договорами, в том числе
+Бернской конвенцией об охране литературных и художественных произведений.
+
+УЧАСТИЕ
+При создании программы помогал KolRau. Его участие не означает передачи или раздела прав:
+исключительные права на программу принадлежат dadramus.
+
+РАЗРЕШЕНО
+Бесплатное личное некоммерческое использование и передача другим лицам неизменённой копии
+программы вместе с этим файлом и сведениями об авторстве.
+Размещение на GitHub не отменяет этих условий; право других пользователей просматривать и форкать
+публичный репозиторий в пределах GitHub определяется Условиями использования GitHub.
+
+ЗАПРЕЩЕНО БЕЗ ПИСЬМЕННОГО СОГЛАСИЯ АВТОРА
+1. Выдавать программу или её части за собственные.
+2. Удалять или изменять сведения об авторстве, этот файл и окно «О создателях».
+3. Продавать программу или использовать её в коммерческих целях.
+4. Распространять изменённые версии под именем Zapret Studio или от имени автора.
+
+СТОРОННИЕ КОМПОНЕНТЫ
+Zapret Studio — графическая оболочка. Она только запускает и проверяет сторонние компоненты:
+zapret (winws), набор стратегий zapret-discord-youtube и драйвер WinDivert.
+Эти компоненты НЕ входят в авторство dadramus, не изменяются программой, не входят в этот
+репозиторий и распространяются по лицензиям их авторов, которым принадлежат все права на них.
+Названия YouTube, Discord, Telegram, Instagram, X, Twitch, Cloudflare и др. принадлежат их
+владельцам, используются только для указания проверяемых сервисов; программа с ними не связана.
+
+ОТКАЗ ОТ ГАРАНТИЙ
+Программа предоставляется «как есть», без каких-либо гарантий. Автор не отвечает за возможный
+ущерб от её использования. Пользователь самостоятельно отвечает за соблюдение законов своей
+страны и правил используемых сервисов.
+
+Использование программы означает согласие с этими условиями.
+
+---
+Zapret Studio is the original work of dadramus, who is the sole author and copyright holder (created with the help of KolRau, which does not transfer or share any rights).
+Free personal non-commercial use and redistribution of unmodified copies with this notice are
+permitted. Selling, removing attribution, or redistributing modified versions under the name
+Zapret Studio without written permission is prohibited. Third-party components (zapret/winws,
+zapret-discord-youtube, WinDivert) belong to their respective authors and are under their own
+licenses. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
