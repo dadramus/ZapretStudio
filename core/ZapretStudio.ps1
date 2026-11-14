@@ -166,7 +166,7 @@ $script:SpCode = {
             </Grid>
           </Border>
         </StackPanel>
-        <TextBlock Text="Zapret Studio 2.0  ·  dadramus  ©  2026  ·  щелчок — пропустить" FontSize="10" Foreground="#5E6380" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14"/>
+        <TextBlock Text="Zapret Studio 2.2  ·  dadramus  ©  2026  ·  щелчок — пропустить" FontSize="10" Foreground="#5E6380" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14"/>
       </Grid>
     </Border>
   </Grid>
@@ -1050,7 +1050,7 @@ function Start-SplashZS([string]$acc) {
   <Grid>
     <Border CornerRadius="30" Background="#0C0C12" BorderBrush="#1FFFFFFF" BorderThickness="1"/>
     <Border x:Name="VerPill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,22,0,0" CornerRadius="8" Padding="10,3" Background="#12FFFFFF" BorderBrush="#20FFFFFF" BorderThickness="1">
-      <TextBlock Text="v2.0" FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold" Foreground="#8A8A99"/>
+      <TextBlock Text="v2.2" FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold" Foreground="#8A8A99"/>
     </Border>
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,16,16,0">
@@ -1531,7 +1531,7 @@ function Hex($c) { '#{0:X2}{1:X2}{2:X2}' -f $c.R, $c.G, $c.B }
 function GStop($c, [double]$o) { $g = New-Object System.Windows.Media.GradientStop; $g.Color = $c; $g.Offset = $o; $g }
 $Xaml = @'
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Zapret Studio 2.0" Width="1000" Height="690" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="Zapret Studio 2.2" Width="1000" Height="690" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         ResizeMode="CanResize" MinWidth="900" MinHeight="620" WindowStartupLocation="CenterScreen" FontFamily="Segoe UI" FontSize="13"
         Foreground="{DynamicResource TextBrush}" UseLayoutRounding="True" SnapsToDevicePixels="True">
 <Window.Resources>
@@ -1806,7 +1806,7 @@ $Xaml = @'
         <TextBlock Text="Zapret Studio" FontWeight="Bold" FontSize="15" Margin="12,0,0,0" VerticalAlignment="Center"/>
         <Button x:Name="BtnAbout" Style="{StaticResource LinkBtn}" FontSize="12" Content="О создателях" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="Автор, авторские права и лицензия"/>
         <Button x:Name="BtnGit" Style="{StaticResource LinkBtn}" FontSize="12" Content="Мы на GitHub ↗" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="github.com/dadramus/ZapretStudio — исходники, обновления, идеи и баг-репорты"/>
-        <Border x:Name="VerPill" CornerRadius="7" Background="#18FFFFFF" BorderBrush="{DynamicResource StrokeBrush}" BorderThickness="1" Padding="7,1" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="Zapret Studio 2.0"><TextBlock Text="v2.0" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource SubBrush}"/></Border>
+        <Border x:Name="VerPill" CornerRadius="7" Background="#18FFFFFF" BorderBrush="{DynamicResource StrokeBrush}" BorderThickness="1" Padding="7,1" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="Zapret Studio 2.2"><TextBlock Text="v2.2" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource SubBrush}"/></Border>
       </StackPanel>
       <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,12,0" VerticalAlignment="Center">
         <Button x:Name="BtnPin" Style="{StaticResource TitleBtn}" Content="&#xE718;" ToolTip="Поверх всех окон"/>
@@ -2355,7 +2355,7 @@ $Xaml = @'
                 <TextBlock Text="&#xE946;" FontFamily="Segoe MDL2 Assets" FontSize="20" Foreground="{DynamicResource OnAccentBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
               </Border>
               <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
-                <TextBlock Text="Zapret Studio 2.0" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextBrush}"/>
+                <TextBlock Text="Zapret Studio 2.2" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextBrush}"/>
                 <TextBlock Text="чем отличается от оригинального zapret" FontSize="11" Foreground="{DynamicResource SubBrush}"/>
               </StackPanel>
             </StackPanel>
@@ -2379,7 +2379,7 @@ $Xaml = @'
                 <Border CornerRadius="14" BorderThickness="1" BorderBrush="{DynamicResource StrokeBrush}" Background="{DynamicResource PanelBrush}" Padding="16,14" Margin="0,0,0,10">
                   <StackPanel>
                     <TextBlock Text="Zapret Studio" FontSize="20" FontWeight="Bold"/>
-                    <TextBlock Text="Zapret Studio 2.0 · сборка 18" FontSize="11" FontWeight="Bold" Foreground="#F59E0B" Margin="0,2,0,12"/>
+                    <TextBlock Text="Zapret Studio 2.2 · сборка 18" FontSize="11" FontWeight="Bold" Foreground="#F59E0B" Margin="0,2,0,12"/>
                     <UniformGrid Columns="2">
                     <Border x:Name="BadgeDad" CornerRadius="12" BorderThickness="2" BorderBrush="{DynamicResource AccentBrush}" Padding="12,10" Margin="0,0,6,0" Cursor="Hand" Background="#14FFFFFF" RenderTransformOrigin="0.5,0.5" ToolTip="Нажмите — открыть Discord">
                         <Border.RenderTransform><TransformGroup><ScaleTransform/><TranslateTransform/></TransformGroup></Border.RenderTransform>
@@ -7353,7 +7353,7 @@ function Start-WarpWorker {
     $st = [hashtable]::Synchronized(@{
         Status = ''; Stage = 'Готов'; Busy = $false; Result = ''; Stop = $false
         WantConnect = $false; WantDisconnect = $false; Mode = [string]$Cfg.WarpMode; Proto = [string]$Cfg.WarpProto
-        Error = ''; StopAfterStatus = $false
+        Error = ''; StopAfterStatus = $false; Cancel = $false
     })
     $script:WarpSt = $st
     $sb = {
@@ -7381,7 +7381,7 @@ function Start-WarpWorker {
                 if ($st.WantConnect -and -not $st.Busy) {
                     $st.WantConnect = $false; $st.Busy = $true; $st.Result = ''
                     $ok = $false
-                    for ($try = 1; $try -le 3 -and -not $ok -and -not $st.Stop; $try++) {
+                    for ($try = 1; $try -le 3 -and -not $ok -and -not $st.Stop -and -not $st.Cancel; $try++) {
                         $st.Stage = ('Попытка {0} из 3 · применяю режим' -f $try)
                         $null = Run @('mode', [string]$st.Mode)
                         if ([string]$st.Proto -ne 'auto') { $st.Stage = ('Попытка {0} из 3 · выбираю протокол' -f $try); $pr = [string]$st.Proto; if ($pr -eq 'masque') { $pr = 'MASQUE' } elseif ($pr -eq 'wireguard') { $pr = 'WireGuard' }; $null = Run @('tunnel', 'protocol', 'set', $pr) }
@@ -7389,7 +7389,7 @@ function Start-WarpWorker {
                         $conn = Run @('connect')
                         $st.Stage = ('Попытка {0} из 3 · установка соединения…' -f $try)
                         $deadline = (Get-Date).AddSeconds(25); $n = 0
-                        while ((Get-Date) -lt $deadline -and -not $st.Stop) {
+                        while ((Get-Date) -lt $deadline -and -not $st.Stop -and -not $st.Cancel) {
                             Start-Sleep -Milliseconds 650
                             $s = Run @('status'); $n++
                             if ($s -match 'Status update:\s*Connected') {
@@ -7405,7 +7405,15 @@ function Start-WarpWorker {
                         }
                         if (-not $ok -and $st.Error) { break }
                     }
-                    if ($ok) {
+                    if ($st.Cancel) {
+                        # пользователь отменил подключение: снимаем то, что успело подняться
+                        $st.Cancel = $false
+                        $st.Stage = 'Отменено'
+                        try { $null = Run @('disconnect') } catch { }
+                        $st.Result = 'off'; $st.Busy = $false
+                        $st.Status = 'Status update: Disconnected'
+                    }
+                    elseif ($ok) {
                         $st.Stage = 'Подключено'; $st.Result = 'ok'
                         # окно клиента убираем: туннель держит служба, а в трее лишняя иконка не нужна
                         try { Get-Process -Name 'Cloudflare WARP' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch { }
@@ -7507,9 +7515,15 @@ function Warp-Paint {
     $runOk = [bool]$script:Running -and -not [bool]$script:Testing
     $canOn = $runOk -or ($s.Key -eq 'on')
     if ($script:BtnWarpOnEl) { $script:BtnWarpOnEl.IsEnabled = $canOn -and -not $busy }
-    if ($script:BtnWarpOffEl) { $script:BtnWarpOffEl.IsEnabled = ($s.Key -eq 'on') -and -not $busy }
+    if ($script:BtnWarpOffEl) {
+        $script:BtnWarpOffEl.IsEnabled = ($s.Key -eq 'on') -or $busy
+        try { $script:BtnWarpOffEl.Content = $(if ($busy) { 'Отменить' } else { 'Отключить' }) } catch { }
+    }
     if ($script:WarpSubT) {
-        if ($s.Key -eq 'on') {
+        if ($busy) {
+            $script:WarpSubT.Text = 'Подключение идёт — можно отменить кнопкой «Отменить»'
+            $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'WarnBrush')
+        } elseif ($s.Key -eq 'on') {
             $script:WarpSubT.Text = 'Трафик идёт через Cloudflare.'
             $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'SubBrush')
         } elseif (-not $runOk) {
@@ -7599,6 +7613,12 @@ if ($script:BtnWarpOnEl) {
 if ($script:BtnWarpOffEl) {
     $script:BtnWarpOffEl.Add_Click({
         if (-not $script:WarpSt) { return }
+        if ($script:WarpSt.Busy) {
+            $script:WarpSt.Cancel = $true
+            Log 'WARP: подключение отменено'
+            Warp-Paint
+            return
+        }
         $script:WarpSt.WantConnect = $false
         $script:WarpSt.WantDisconnect = $true
         Log 'WARP: отключаю туннель'
