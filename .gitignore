@@ -1,0 +1,19 @@
+# настройки и данные пользователя — не коммитим
+zapret-studio.json
+zapret-studio.json.*
+*.bak
+zs-geno*.json
+zs-geno-prev.bat
+zs_tmp_*.bat
+utils/test results/
+
+# отчёты и логи
+*.log
+
+# системное
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# сборочный мусор
+*.zip
