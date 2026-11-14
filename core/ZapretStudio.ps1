@@ -5991,10 +5991,23 @@ $miExit = $menu.Items.Add('Выход')
 $script:Tray.ContextMenuStrip = $menu
 
 function Show-Window { $Win.Show(); $Win.WindowState = 'Normal'; [void]$Win.Activate() }
+function Stop-WarpOnExit {
+    # закрываем WARP вместе с программой: иначе он остаётся в трее и держит туннель
+    try { if ($script:WarpSt) { $script:WarpSt.Stop = $true } } catch { }
+    try { if ($script:WarpTimer) { $script:WarpTimer.Stop() } } catch { }
+    try {
+        if ($script:WarpExe) {
+            try { Start-Process -FilePath $script:WarpExe -ArgumentList 'disconnect' -WindowStyle Hidden -Wait -ErrorAction SilentlyContinue } catch { }
+        }
+    } catch { }
+    try { Get-Process -Name 'Cloudflare WARP' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch { }
+}
+
 function Exit-App {
     $script:Quitting = $true; $script:KeepArmed = $false
     Clear-PatchedBats
     if ($Cfg.StopOnExit) { Stop-Zapret -Full }
+    try { Stop-WarpOnExit } catch { }
     Save-Settings
     $script:Tray.Visible = $false; $script:Tray.Dispose()
     $app.Shutdown()
@@ -7392,7 +7405,11 @@ function Start-WarpWorker {
                         }
                         if (-not $ok -and $st.Error) { break }
                     }
-                    if ($ok) { $st.Stage = 'Подключено'; $st.Result = 'ok' }
+                    if ($ok) {
+                        $st.Stage = 'Подключено'; $st.Result = 'ok'
+                        # окно клиента убираем: туннель держит служба, а в трее лишняя иконка не нужна
+                        try { Get-Process -Name 'Cloudflare WARP' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch { }
+                    }
                     else { $st.Stage = 'НЕ УДАЛОСЬ ПОДКЛЮЧИТЬСЯ!'; $st.Result = 'fail' }
                     $st.Busy = $false
                 }
