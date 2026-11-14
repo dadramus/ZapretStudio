@@ -17,3 +17,9 @@ desktop.ini
 
 # сборочный мусор
 *.zip
+
+# встроенный WARP: бинарники и личный конфиг в репозиторий не кладём
+core/warp/usque.exe
+core/warp/wintun.dll
+core/warp/config.json
+core/warp/*.log

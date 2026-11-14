@@ -47,7 +47,7 @@
   <text x="332" y="240" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#9A9AAA">обход блокировок · подбор · слежение · WARP</text>
 
   <rect x="332" y="264" width="96" height="30" rx="15" fill="#7C5CFF" fill-opacity="0.14" stroke="#7C5CFF" stroke-opacity="0.5"/>
-  <text x="380" y="284" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#B9A8FF">v2.2</text>
+  <text x="380" y="284" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#B9A8FF">v2.3</text>
 
   <text x="1120" y="318" text-anchor="end" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#5A5A66">github.com/dadramus/ZapretStudio</text>
   <text x="80" y="318" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#5A5A66">© 2026 dadramus</text>

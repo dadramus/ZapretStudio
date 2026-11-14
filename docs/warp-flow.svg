@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-label="Как работает встроенный WARP">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14141C"/>
+      <stop offset="1" stop-color="#08080C"/>
+    </linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7C5CFF"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="330" rx="26" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="999" height="329" rx="26" fill="none" stroke="#1CFFFFFF"/>
+
+  <rect x="40" y="96" width="230" height="120" rx="18" fill="#16161D" stroke="#33FFFFFF"/>
+  <text x="155" y="146" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">Zapret Studio</text>
+  <text x="155" y="174" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#8A8A99">одно окно, одна папка</text>
+
+  <path d="M280,156 L344,156" stroke="#7C5CFF" stroke-width="3" marker-end="url(#ar)"/>
+
+  <rect x="356" y="96" width="240" height="120" rx="18" fill="#16161D" stroke="#7C5CFF" stroke-opacity="0.6" stroke-width="1.6"/>
+  <text x="476" y="140" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="17" font-weight="700" fill="#FFFFFF">usque.exe</text>
+  <text x="476" y="166" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#9A9AAA">туннель MASQUE</text>
+  <text x="476" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#22C55E">лежит в core\warp\</text>
+
+  <path d="M606,156 L670,156" stroke="#7C5CFF" stroke-width="3" marker-end="url(#ar)"/>
+
+  <rect x="682" y="96" width="278" height="120" rx="18" fill="#16161D" stroke="#33FFFFFF"/>
+  <text x="821" y="146" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">Cloudflare</text>
+  <text x="821" y="174" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#8A8A99">выход в интернет</text>
+
+  <rect x="356" y="242" width="240" height="52" rx="14" fill="#1A1A22" stroke="#3A3A46" stroke-dasharray="6 5"/>
+  <text x="476" y="266" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#6E6E7E">клиент Cloudflare WARP</text>
+  <text x="476" y="284" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#EF4444">больше не нужен</text>
+  <path d="M400,252 L552,284" stroke="#EF4444" stroke-width="2.5" stroke-opacity="0.7"/>
+
+  <text x="40" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#7C5CFF">WARP 2.3 — встроен, ставить нечего</text>
+</svg>

@@ -166,7 +166,7 @@ $script:SpCode = {
             </Grid>
           </Border>
         </StackPanel>
-        <TextBlock Text="Zapret Studio 2.2  ·  dadramus  ©  2026  ·  щелчок — пропустить" FontSize="10" Foreground="#5E6380" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14"/>
+        <TextBlock Text="Zapret Studio 2.3  ·  dadramus  ©  2026  ·  щелчок — пропустить" FontSize="10" Foreground="#5E6380" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14"/>
       </Grid>
     </Border>
   </Grid>
@@ -1050,7 +1050,7 @@ function Start-SplashZS([string]$acc) {
   <Grid>
     <Border CornerRadius="30" Background="#0C0C12" BorderBrush="#1FFFFFFF" BorderThickness="1"/>
     <Border x:Name="VerPill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,22,0,0" CornerRadius="8" Padding="10,3" Background="#12FFFFFF" BorderBrush="#20FFFFFF" BorderThickness="1">
-      <TextBlock Text="v2.2" FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold" Foreground="#8A8A99"/>
+      <TextBlock Text="v2.3" FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold" Foreground="#8A8A99"/>
     </Border>
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,16,16,0">
@@ -1531,7 +1531,7 @@ function Hex($c) { '#{0:X2}{1:X2}{2:X2}' -f $c.R, $c.G, $c.B }
 function GStop($c, [double]$o) { $g = New-Object System.Windows.Media.GradientStop; $g.Color = $c; $g.Offset = $o; $g }
 $Xaml = @'
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Zapret Studio 2.2" Width="1000" Height="690" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="Zapret Studio 2.3" Width="1000" Height="690" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         ResizeMode="CanResize" MinWidth="900" MinHeight="620" WindowStartupLocation="CenterScreen" FontFamily="Segoe UI" FontSize="13"
         Foreground="{DynamicResource TextBrush}" UseLayoutRounding="True" SnapsToDevicePixels="True">
 <Window.Resources>
@@ -1806,7 +1806,7 @@ $Xaml = @'
         <TextBlock Text="Zapret Studio" FontWeight="Bold" FontSize="15" Margin="12,0,0,0" VerticalAlignment="Center"/>
         <Button x:Name="BtnAbout" Style="{StaticResource LinkBtn}" FontSize="12" Content="О создателях" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="Автор, авторские права и лицензия"/>
         <Button x:Name="BtnGit" Style="{StaticResource LinkBtn}" FontSize="12" Content="Мы на GitHub ↗" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="github.com/dadramus/ZapretStudio — исходники, обновления, идеи и баг-репорты"/>
-        <Border x:Name="VerPill" CornerRadius="7" Background="#18FFFFFF" BorderBrush="{DynamicResource StrokeBrush}" BorderThickness="1" Padding="7,1" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="Zapret Studio 2.2"><TextBlock Text="v2.2" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource SubBrush}"/></Border>
+        <Border x:Name="VerPill" CornerRadius="7" Background="#18FFFFFF" BorderBrush="{DynamicResource StrokeBrush}" BorderThickness="1" Padding="7,1" Margin="10,1,0,0" VerticalAlignment="Center" ToolTip="Zapret Studio 2.3"><TextBlock Text="v2.3" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource SubBrush}"/></Border>
       </StackPanel>
       <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,12,0" VerticalAlignment="Center">
         <Button x:Name="BtnPin" Style="{StaticResource TitleBtn}" Content="&#xE718;" ToolTip="Поверх всех окон"/>
@@ -2355,7 +2355,7 @@ $Xaml = @'
                 <TextBlock Text="&#xE946;" FontFamily="Segoe MDL2 Assets" FontSize="20" Foreground="{DynamicResource OnAccentBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
               </Border>
               <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
-                <TextBlock Text="Zapret Studio 2.2" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextBrush}"/>
+                <TextBlock Text="Zapret Studio 2.3" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextBrush}"/>
                 <TextBlock Text="чем отличается от оригинального zapret" FontSize="11" Foreground="{DynamicResource SubBrush}"/>
               </StackPanel>
             </StackPanel>
@@ -2379,7 +2379,7 @@ $Xaml = @'
                 <Border CornerRadius="14" BorderThickness="1" BorderBrush="{DynamicResource StrokeBrush}" Background="{DynamicResource PanelBrush}" Padding="16,14" Margin="0,0,0,10">
                   <StackPanel>
                     <TextBlock Text="Zapret Studio" FontSize="20" FontWeight="Bold"/>
-                    <TextBlock Text="Zapret Studio 2.2 · сборка 18" FontSize="11" FontWeight="Bold" Foreground="#F59E0B" Margin="0,2,0,12"/>
+                    <TextBlock Text="Zapret Studio 2.3 · сборка 18" FontSize="11" FontWeight="Bold" Foreground="#F59E0B" Margin="0,2,0,12"/>
                     <UniformGrid Columns="2">
                     <Border x:Name="BadgeDad" CornerRadius="12" BorderThickness="2" BorderBrush="{DynamicResource AccentBrush}" Padding="12,10" Margin="0,0,6,0" Cursor="Hand" Background="#14FFFFFF" RenderTransformOrigin="0.5,0.5" ToolTip="Нажмите — открыть Discord">
                         <Border.RenderTransform><TransformGroup><ScaleTransform/><TranslateTransform/></TransformGroup></Border.RenderTransform>
@@ -6001,12 +6001,14 @@ function Stop-WarpOnExit {
         }
     } catch { }
     try { Get-Process -Name 'Cloudflare WARP' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch { }
+    try { Get-Process -Name 'usque' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch { }
 }
 
 function Exit-App {
     $script:Quitting = $true; $script:KeepArmed = $false
     Clear-PatchedBats
-    if ($Cfg.StopOnExit) { Stop-Zapret -Full }
+    # winws не должен оставаться в системе после закрытия программы — иначе обход «висит» без хозяина
+    try { Stop-Zapret -Full } catch { }
     try { Stop-WarpOnExit } catch { }
     Save-Settings
     $script:Tray.Visible = $false; $script:Tray.Dispose()
@@ -6287,7 +6289,8 @@ $app.Add_DispatcherUnhandledException({ param($sender, $ev) try { Log ('Ошиб
 # ---------------------------------------------------------------- старт
 $script:Tray.Visible = $true
 $ChkTray.IsChecked = [bool]$Cfg.TrayOnClose; $ChkAutoLast.IsChecked = [bool]$Cfg.AutoStartLast
-$ChkStopExit.IsChecked = [bool]$Cfg.StopOnExit; $ChkHide.IsChecked = [bool]$Cfg.HideConsole; $ChkPerf.IsChecked = [bool]$Cfg.Perf
+$ChkStopExit.IsChecked = $true; $ChkStopExit.IsEnabled = $false; $ChkStopExit.ToolTip = 'Обход всегда останавливается вместе с программой — winws не остаётся в системе'
+$ChkHide.IsChecked = [bool]$Cfg.HideConsole; $ChkPerf.IsChecked = [bool]$Cfg.Perf
 if ($Cfg.Sort -eq 'score') { $BtnSort.Content = 'По тесту' }
 $ChkKeep.IsChecked = [bool]$Cfg.KeepAlive; $ChkMon.IsChecked = [bool]$Cfg.Monitor; $ChkAutoFix.IsChecked = [bool]$Cfg.AutoFix
 $Cfg.AutoPing = $true; if ($Cfg.ExpFlushDns -or $Cfg.ExpDnsWarm) { $Cfg.ExpFlushDns = $true; $Cfg.ExpDnsWarm = $true }
@@ -7332,6 +7335,10 @@ function Get-WarpCli {
     return $null
 }
 $script:WarpExe = Get-WarpCli
+# встроенный WARP: если в папке лежит свой клиент — работаем через него, клиент Cloudflare не нужен
+$script:WarpDir = Join-Path $script:AppDir 'warp'
+$script:UsqueExe = Join-Path $script:WarpDir 'usque.exe'
+$script:WarpEmbedded = Test-Path -LiteralPath $script:UsqueExe
 
 function Get-WarpStatusText([string]$raw) {
     if (-not $raw) { return @{ Key = 'unknown'; Text = 'Состояние неизвестно' } }
@@ -7349,16 +7356,67 @@ function Get-WarpStatusText([string]$raw) {
 function Start-WarpWorker {
     if ($script:WarpPs -and $script:WarpSt -and -not $script:WarpSt.Stop) { return }
     if ($script:WarpPs) { try { $script:WarpPs.Dispose() } catch { } ; $script:WarpPs = $null; $script:WarpSt = $null }
-    if (-not $script:WarpExe) { return }
+    if (-not $script:WarpExe -and -not $script:WarpEmbedded) { return }
     $st = [hashtable]::Synchronized(@{
         Status = ''; Stage = 'Готов'; Busy = $false; Result = ''; Stop = $false
         WantConnect = $false; WantDisconnect = $false; Mode = [string]$Cfg.WarpMode; Proto = [string]$Cfg.WarpProto
         Error = ''; StopAfterStatus = $false; Cancel = $false
+        Embedded = [bool]$script:WarpEmbedded; Usque = [string]$script:UsqueExe; WarpDir = [string]$script:WarpDir
     })
     $script:WarpSt = $st
     $sb = {
         param($cli, $st)
         function Run([string[]]$a) {
+            if ($st.Embedded) {
+                $verb = [string]$a[0]
+                if ($verb -eq 'status') {
+                    $p = Get-Process -Name 'usque' -ErrorAction SilentlyContinue
+                    if ($p) { return "Status update: Connected`nNetwork: healthy" }
+                    return 'Status update: Disconnected'
+                }
+                if ($verb -eq 'connect') {
+                    $dir = [string]$st.WarpDir
+                    $cfg = Join-Path $dir 'config.json'
+                    if (-not (Test-Path -LiteralPath $cfg)) {
+                        $st.Stage = 'Регистрирую устройство…'
+                        $r = New-Object System.Diagnostics.ProcessStartInfo
+                        $r.FileName = [string]$st.Usque
+                        $r.Arguments = 'register -a'
+                        $r.WorkingDirectory = $dir
+                        $r.UseShellExecute = $false; $r.CreateNoWindow = $true
+                        $r.RedirectStandardOutput = $true; $r.RedirectStandardError = $true
+                        $rp = [Diagnostics.Process]::Start($r)
+                        $null = $rp.StandardOutput.ReadToEnd(); $rp.WaitForExit()
+                        if (-not (Test-Path -LiteralPath $cfg)) { throw 'не удалось зарегистрировать устройство' }
+                    }
+                    Get-Process -Name 'usque' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+                    $st.Stage = 'Поднимаю туннель…'
+                    $outLog = Join-Path $dir 'usque.out.log'
+                    $errLog = Join-Path $dir 'usque.err.log'
+                    try { Remove-Item -LiteralPath $errLog -Force -ErrorAction SilentlyContinue } catch { }
+                    $argl = 'nativetun -n ZapretWARP --always-reconnect'
+                    $upB = Join-Path $dir 'up.bat'
+                    $dnB = Join-Path $dir 'down.bat'
+                    if (Test-Path -LiteralPath $upB) { $argl = $argl + ' --on-connect "' + $upB + '"' }
+                    if (Test-Path -LiteralPath $dnB) { $argl = $argl + ' --on-disconnect "' + $dnB + '"' }
+                    $proc = Start-Process -FilePath ([string]$st.Usque) -ArgumentList $argl -WorkingDirectory $dir -WindowStyle Hidden -PassThru -RedirectStandardOutput $outLog -RedirectStandardError $errLog
+                    Start-Sleep -Seconds 5
+                    if ($proc -and $proc.HasExited) {
+                        $er = ''
+                        try { $er = ([string](Get-Content -LiteralPath $errLog -Raw -ErrorAction SilentlyContinue)).Trim() } catch { }
+                        if (-not $er) { try { $er = ([string](Get-Content -LiteralPath $outLog -Raw -ErrorAction SilentlyContinue)).Trim() } catch { } }
+                        if (-not $er) { $er = 'клиент завершился сразу после запуска (код ' + $proc.ExitCode + ')' }
+                        $st.Error = $er
+                        $st.Stage = ('usque: ' + ($er -replace "`r?`n", ' '))
+                    }
+                    return ''
+                }
+                if ($verb -eq 'disconnect') {
+                    Get-Process -Name 'usque' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+                    return ''
+                }
+                return ''
+            }
             $psi = New-Object System.Diagnostics.ProcessStartInfo
             $psi.FileName = $cli
             $psi.Arguments = (($a | ForEach-Object { if ($_ -match '\s') { '"' + $_ + '"' } else { $_ } }) -join ' ')
@@ -7387,6 +7445,7 @@ function Start-WarpWorker {
                         if ([string]$st.Proto -ne 'auto') { $st.Stage = ('Попытка {0} из 3 · выбираю протокол' -f $try); $pr = [string]$st.Proto; if ($pr -eq 'masque') { $pr = 'MASQUE' } elseif ($pr -eq 'wireguard') { $pr = 'WireGuard' }; $null = Run @('tunnel', 'protocol', 'set', $pr) }
                         $st.Stage = ('Попытка {0} из 3 · отправляю команду' -f $try)
                         $conn = Run @('connect')
+                        if ($st.Embedded -and $st.Error) { break }
                         $st.Stage = ('Попытка {0} из 3 · установка соединения…' -f $try)
                         $deadline = (Get-Date).AddSeconds(25); $n = 0
                         while ((Get-Date) -lt $deadline -and -not $st.Stop -and -not $st.Cancel) {
@@ -7413,11 +7472,11 @@ function Start-WarpWorker {
                         $st.Result = 'off'; $st.Busy = $false
                         $st.Status = 'Status update: Disconnected'
                     }
-                    elseif ($ok) {
-                        $st.Stage = 'Подключено'; $st.Result = 'ok'
+                    elseif ($ok) {                        $st.Stage = 'Подключено'; $st.Result = 'ok'
                         # окно клиента убираем: туннель держит служба, а в трее лишняя иконка не нужна
                         try { Get-Process -Name 'Cloudflare WARP' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch { }
                     }
+                    elseif ($st.Error) { $st.Stage = ('Ошибка: ' + [string]$st.Error); $st.Result = 'fail' }
                     else { $st.Stage = 'НЕ УДАЛОСЬ ПОДКЛЮЧИТЬСЯ!'; $st.Result = 'fail' }
                     $st.Busy = $false
                 }
@@ -7451,7 +7510,7 @@ function Warp-PushStage([string]$t) {
 
 function Warp-Paint {
     if (-not $script:WarpPanelEl) { return }
-    if (-not $script:WarpExe) {
+    if (-not $script:WarpExe -and -not $script:WarpEmbedded) {
         # клиента нет: говорим прямо, что делать и где взять
         try {
             if ($script:WarpStateDotEl) { $script:WarpStateDotEl.Fill = New-Brush (ToColor '#EF4444') }
@@ -7477,7 +7536,7 @@ function Warp-Paint {
     }
     $st = $script:WarpSt
     # службу проверяем не чаще раза в 3 секунды: если её остановили, клиент молча висит «настраивается»
-    if ($script:WarpExe) {
+    if ($script:WarpExe -and -not $script:WarpEmbedded) {
         $nowT = Get-Date
         if (-not $script:WarpSvcAt -or ($nowT - $script:WarpSvcAt).TotalSeconds -ge 3) {
             $script:WarpSvcAt = $nowT
@@ -7513,7 +7572,7 @@ function Warp-Paint {
         if ($script:WarpDotEl) { $script:WarpDotEl.Fill = New-Brush (ToColor $hex) }
     } catch { }
     $runOk = [bool]$script:Running -and -not [bool]$script:Testing
-    $canOn = $runOk -or ($s.Key -eq 'on')
+    $canOn = $runOk -or $script:WarpEmbedded -or ($s.Key -eq 'on')
     if ($script:BtnWarpOnEl) { $script:BtnWarpOnEl.IsEnabled = $canOn -and -not $busy }
     if ($script:BtnWarpOffEl) {
         $script:BtnWarpOffEl.IsEnabled = ($s.Key -eq 'on') -or $busy
@@ -7524,11 +7583,14 @@ function Warp-Paint {
             $script:WarpSubT.Text = 'Подключение идёт — можно отменить кнопкой «Отменить»'
             $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'WarnBrush')
         } elseif ($s.Key -eq 'on') {
-            $script:WarpSubT.Text = 'Трафик идёт через Cloudflare.'
+            $script:WarpSubT.Text = $(if ($script:WarpEmbedded) { 'Трафик идёт через встроенный туннель Cloudflare.' } else { 'Трафик идёт через Cloudflare.' })
             $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'SubBrush')
-        } elseif (-not $runOk) {
+        } elseif (-not $runOk -and -not $script:WarpEmbedded) {
             $script:WarpSubT.Text = 'Сначала включите обход — WARP подключается только вместе с ним'
             $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'WarnBrush')
+        } elseif ($script:WarpEmbedded) {
+            $script:WarpSubT.Text = 'Встроенный туннель Cloudflare — клиент ставить не нужно'
+            $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'SubBrush')
         } elseif ($res -eq 'fail') {
             $script:WarpSubT.Text = 'Три попытки не дали результата. Нажмите «Включить» ещё раз или проверьте клиент WARP.'
             $script:WarpSubT.SetResourceReference([Windows.Controls.TextBlock]::ForegroundProperty, 'DangerBrush')
@@ -7593,13 +7655,13 @@ if ($script:WarpProtoHost) {
 }
 if ($script:BtnWarpOnEl) {
     $script:BtnWarpOnEl.Add_Click({
-        if (-not $script:Running -or $script:Testing) {
+        if (-not $script:WarpEmbedded -and (-not $script:Running -or $script:Testing)) {
             $wk = ''
             if ($script:WarpSt) { $wk = (Get-WarpStatusText ([string]$script:WarpSt.Status)).Key }
             if ($wk -ne 'on') { Log 'WARP: сначала включите обход' 'warn'; return }
         }
         Start-WarpWorker
-        if (-not $script:WarpSt) { Log 'WARP: клиент Cloudflare не найден' 'err'; return }
+        if (-not $script:WarpSt) { Log 'WARP: не удалось запустить туннель' 'err'; return }
         $script:WarpSt.Mode = [string]$Cfg.WarpMode
         $script:WarpSt.Proto = [string]$Cfg.WarpProto
         $script:WarpSt.Error = ''
@@ -7628,9 +7690,10 @@ if ($script:BtnWarpOffEl) {
 $warpCloseB = $Win.FindName('BtnWarpClose')
 if ($warpCloseB) { $warpCloseB.Add_Click({ Hide-Overlay }) }
 if ($BtnWarp) { $BtnWarp.Add_Click({ try { Show-Warp } catch { Log ('WARP: ' + $_.Exception.Message) 'err' } }) }
-if (-not $script:WarpExe) {
+if (-not $script:WarpExe -and -not $script:WarpEmbedded) {
     try { Log 'WARP: клиент Cloudflare не найден — кнопка будет неактивна' 'warn' } catch { }
 }
+if ($script:WarpEmbedded) { try { Log 'WARP: используется встроенный туннель (usque)' 'ok' } catch { } }
 # стартовое состояние точки на кнопке: один запрос status, без постоянного опроса
 function Warp-Peek {
     Start-WarpWorker
