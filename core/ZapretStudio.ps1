@@ -2315,6 +2315,7 @@ $Xaml = @'
                     <TextBlock x:Name="WarpStateText" Text="Не подключён" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}"/>
                   </StackPanel>
                   <TextBlock x:Name="WarpStateSub" Text="Сначала включите обход — WARP подключается только вместе с ним" FontSize="11" Foreground="{DynamicResource SubBrush}" TextWrapping="Wrap" Margin="18,5,0,0"/>
+                  <Button x:Name="BtnWarpGet" Content="Скачать Cloudflare WARP ↗" Style="{StaticResource LinkBtn}" FontSize="12" HorizontalAlignment="Left" Margin="18,8,0,0" Visibility="Collapsed" ToolTip="Откроется 1.1.1.1 — официальная страница загрузки Cloudflare WARP"/>
                 </StackPanel>
               </Border>
               <TextBlock x:Name="WarpStages" FontSize="11" Foreground="{DynamicResource SubBrush}" TextWrapping="Wrap" LineHeight="17" Margin="2,10,0,0"/>
@@ -7426,6 +7427,20 @@ function Warp-PushStage([string]$t) {
 
 function Warp-Paint {
     if (-not $script:WarpPanelEl) { return }
+    if (-not $script:WarpExe) {
+        # клиента нет: говорим об этом прямо, а не «состояние неизвестно»
+        try {
+            if ($script:WarpStateDotEl) { $script:WarpStateDotEl.Fill = New-Brush (ToColor '#EF4444') }
+            if ($script:WarpStateT) { $script:WarpStateT.Text = 'Cloudflare WARP не установлен' }
+            if ($script:WarpSubT) { $script:WarpSubT.Text = 'Программа управляет только установленным клиентом. Скачайте WARP, установите и запустите один раз — дальше всё будет работать отсюда.' }
+            if ($script:WarpDotEl) { $script:WarpDotEl.Fill = New-Brush (ToColor '#EF4444') }
+            $g = $Win.FindName('BtnWarpGet'); if ($g) { $g.Visibility = 'Visible' }
+            if ($script:BtnWarpOnEl) { $script:BtnWarpOnEl.IsEnabled = $false; $script:BtnWarpOnEl.Opacity = 0.4 }
+            if ($script:BtnWarpOffEl) { $script:BtnWarpOffEl.IsEnabled = $false; $script:BtnWarpOffEl.Opacity = 0.4 }
+            if ($script:WarpStagesT) { $script:WarpStagesT.Text = '' }
+        } catch { }
+        return
+    }
     $st = $script:WarpSt
     $raw = ''; $busy = $false; $res = ''
     if ($st) { $raw = [string]$st.Status; $busy = [bool]$st.Busy; $res = [string]$st.Result }
@@ -7548,6 +7563,8 @@ if ($warpCloseB) { $warpCloseB.Add_Click({ Hide-Overlay }) }
 if ($BtnWarp) { $BtnWarp.Add_Click({ try { Show-Warp } catch { Log ('WARP: ' + $_.Exception.Message) 'err' } }) }
 if (-not $script:WarpExe) {
     try { Log 'WARP: клиент Cloudflare не найден — кнопка будет неактивна' 'warn' } catch { }
+    $warpGetB = $Win.FindName('BtnWarpGet')
+    if ($warpGetB) { $warpGetB.Add_Click({ try { Start-Process 'https://1.1.1.1/' } catch { } }) }
 }
 # стартовое состояние точки на кнопке: один запрос status, без постоянного опроса
 function Warp-Peek {
