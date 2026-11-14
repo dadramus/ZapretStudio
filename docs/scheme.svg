@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="290" viewBox="0 0 900 290" role="img" aria-label="Куда класть файлы">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7C5CFF"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="290" rx="24" fill="#0D0D12"/>
+  <rect x="0.5" y="0.5" width="899" height="289" rx="24" fill="none" stroke="#1CFFFFFF"/>
+
+  <rect x="34" y="26" width="310" height="96" rx="16" fill="#16161D" stroke="#26FFFFFF"/>
+  <text x="56" y="62" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">zapret-discord-youtube</text>
+  <text x="56" y="90" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#8A8A99">bin\ · lists\ · general*.bat</text>
+
+  <rect x="34" y="168" width="310" height="96" rx="16" fill="#16161D" stroke="#26FFFFFF"/>
+  <text x="56" y="204" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">Zapret Studio</text>
+  <text x="56" y="232" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#8A8A99">ZapretStudio.bat · core\</text>
+
+  <path d="M352,74 C410,74 420,120 462,140" fill="none" stroke="#7C5CFF" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M352,216 C410,216 420,176 462,158" fill="none" stroke="#7C5CFF" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <rect x="474" y="70" width="392" height="158" rx="18" fill="#12121A" stroke="#7C5CFF" stroke-opacity="0.55" stroke-width="1.5"/>
+  <text x="498" y="108" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">C:\Zapret\</text>
+  <text x="498" y="142" font-family="Consolas, Menlo, monospace" font-size="15" fill="#9A9AAA">ZapretStudio.bat</text>
+  <text x="498" y="166" font-family="Consolas, Menlo, monospace" font-size="15" fill="#9A9AAA">core\</text>
+  <text x="498" y="190" font-family="Consolas, Menlo, monospace" font-size="15" fill="#9A9AAA">bin\  lists\  general*.bat</text>
+  <text x="498" y="214" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#22C55E">одна папка — всё вместе</text>
+</svg>
