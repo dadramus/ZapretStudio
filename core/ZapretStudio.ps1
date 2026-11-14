@@ -7451,6 +7451,27 @@ function Warp-Paint {
         return
     }
     $st = $script:WarpSt
+    # службу проверяем не чаще раза в 3 секунды: если её остановили, клиент молча висит «настраивается»
+    if ($script:WarpExe) {
+        $nowT = Get-Date
+        if (-not $script:WarpSvcAt -or ($nowT - $script:WarpSvcAt).TotalSeconds -ge 3) {
+            $script:WarpSvcAt = $nowT
+            try {
+                $svc = Get-Service -Name 'CloudflareWARP' -ErrorAction SilentlyContinue
+                $script:WarpSvcOff = [bool]($svc -and $svc.Status -ne 'Running')
+            } catch { $script:WarpSvcOff = $false }
+        }
+        if ($script:WarpSvcOff) {
+            try {
+                if ($script:WarpStateDotEl) { $script:WarpStateDotEl.Fill = New-Brush (ToColor '#EF4444') }
+                if ($script:WarpStateT) { $script:WarpStateT.Text = 'Служба WARP остановлена' }
+                if ($script:WarpSubT) { $script:WarpSubT.Text = 'Без службы Cloudflare One Client клиент не подключается. Запустите службу (services.msc → Cloudflare One Client) или перезагрузите компьютер.' }
+                if ($script:WarpDotEl) { $script:WarpDotEl.Fill = New-Brush (ToColor '#EF4444') }
+                if ($script:BtnWarpOnEl) { $script:BtnWarpOnEl.IsEnabled = $false; $script:BtnWarpOnEl.Opacity = 0.4 }
+            } catch { }
+            return
+        }
+    }
     $raw = ''; $busy = $false; $res = ''
     if ($st) { $raw = [string]$st.Status; $busy = [bool]$st.Busy; $res = [string]$st.Result }
     $s = Get-WarpStatusText $raw
