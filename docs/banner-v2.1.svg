@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Zapret Studio 2.1">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14141C"/>
+      <stop offset="0.55" stop-color="#0C0C12"/>
+      <stop offset="1" stop-color="#08080B"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#33333F"/>
+      <stop offset="1" stop-color="#15151B"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7C5CFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="30" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="30" fill="url(#grid)"/>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="30" fill="none" stroke="#1CFFFFFF"/>
+
+  <ellipse cx="180" cy="180" rx="180" ry="150" fill="url(#glow)" filter="url(#blur)"/>
+
+  <rect x="80" y="80" width="200" height="200" rx="46" fill="url(#tile)" stroke="#3AFFFFFF" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="86" y="86" width="188" height="188" rx="41" fill="none" stroke="#0A000000" stroke-width="1"/>
+
+  <path d="M104,132.4 L170.4,132.4 L170.4,154.4 L140,205.6 L170.4,205.6 L170.4,227.6 L104,227.6 L104,205.6 L134.4,154.4 L104,154.4 Z" fill="#FFFFFF"/>
+  <path d="M251.2,140 L225.2,132.4 L201.2,140.4 L198,159.6 L212.8,174 L236,184.4 L251.6,199.2 L248.4,218.8 L224.4,227.6 L199.2,220"
+        fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="332" y="126" width="64" height="4" rx="2" fill="url(#acc)"/>
+
+  <text x="330" y="200" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">ZAPRET STUDIO</text>
+  <text x="332" y="240" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#9A9AAA">обход блокировок · подбор · слежение · WARP</text>
+
+  <rect x="332" y="264" width="96" height="30" rx="15" fill="#7C5CFF" fill-opacity="0.14" stroke="#7C5CFF" stroke-opacity="0.5"/>
+  <text x="380" y="284" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#B9A8FF">v2.1</text>
+
+  <text x="1120" y="318" text-anchor="end" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#5A5A66">github.com/dadramus/ZapretStudio</text>
+  <text x="80" y="318" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#5A5A66">© 2026 dadramus</text>
+</svg>
