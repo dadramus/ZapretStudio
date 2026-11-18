@@ -129,11 +129,13 @@ C:\Zapret\
 | [zapret](https://github.com/bol-van/zapret) (`winws`) | bol-van | Движок обхода DPI | MIT |
 | [WinDivert](https://github.com/basil00/WinDivert) | basil00 | Драйвер перехвата пакетов | LGPL v3 / GPL v2 |
 | [Cygwin](https://cygwin.com) (`cygwin1.dll`) | Cygwin | Слой совместимости для `winws` | LGPL v3 |
-| [Cloudflare WARP](https://1.1.1.1) | Cloudflare, Inc. | Резервный туннель, **ставится отдельно** | Собственные условия |
+| [usque](https://github.com/Diniboy1123/usque) | Diniboy1123 | Клиент MASQUE — **лежит в архиве**, `core\warp\` | MIT |
+| [Wintun](https://www.wintun.net/) | WireGuard project | Драйвер виртуального адаптера — **лежит в архиве** | GPL v2 |
+| [Cloudflare WARP](https://1.1.1.1) | Cloudflare, Inc. | Сервис, через который идёт туннель | Собственные условия |
 
-**Zapret Studio не содержит** этих компонентов в репозитории и **не изменяет** их. Программа только запускает ваши `general*.bat` и проверяет результат.
+**В репозитории** этих компонентов нет. В **архиве релиза** лежат `core\warp\usque.exe` и `wintun.dll` — без них встроенный туннель не поднять. Сам zapret, стратегии и WinDivert программа не содержит и не изменяет: она запускает ваши `general*.bat` и проверяет результат.
 
-**Cloudflare.** Cloudflare, Cloudflare WARP и 1.1.1.1 — товарные знаки и продукты Cloudflare, Inc. Программа лишь управляет уже установленным клиентом WARP: его кода внутри нет. Автор Zapret Studio не связан с Cloudflare, не действует от её имени и не получает от неё одобрения.
+**Cloudflare.** Cloudflare, Cloudflare WARP и 1.1.1.1 — товарные знаки и продукты Cloudflare, Inc. Встроенный клиент usque — неофициальный, кода Cloudflare в программе нет. Автор Zapret Studio не связан с Cloudflare, не действует от её имени и не получает от неё одобрения.
 
 **Товарные знаки.** YouTube, Discord, Telegram, Twitch, X, Instagram принадлежат их владельцам и упоминаются только для указания совместимости.
 
@@ -170,7 +172,7 @@ C:\Zapret\
 
 Клиент Cloudflare ставить **не нужно** — туннель уже в папке. При первом включении программа сама регистрирует устройство и поднимает адаптер `ZapretWARP`.
 
-Если в панели написано **«НЕ УДАЛОСЬ ПОДКЛЮЧИТЬСЯ»** — под статусом будет причина. Чаще всего это права администратора (без них нельзя создать адаптер) или антивирус, который не пускает `core\warp\usque.exe`.
+Если подключение не удалось — под статусом будет причина, а созданные маршруты снимутся сами. Чаще всего это права администратора (без них нельзя создать адаптер) или антивирус, который не пускает `core\warp\usque.exe`.
 Если написано **«WARP не установлен»** — значит из папки пропала `core\warp\` (её мог съесть антивирус). Скачайте архив заново.
 </details>
 
@@ -214,7 +216,7 @@ C:\Zapret\
 
 **Zapret Studio** is a Windows launcher (PowerShell + WPF) for [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube): one-click launch, automatic strategy finder, connection monitoring, auto-recovery, Cloudflare WARP, tray icon and themes.
 
-- **Does not include** zapret, zapret-discord-youtube, WinDivert or Cloudflare WARP. Download them from their authors.
+- **Does not include** zapret, zapret-discord-youtube or WinDivert. The bundled WARP client (`usque`, unofficial) and Wintun driver live in `core\warp\`.
 - **No telemetry, plain-text source.** Administrator rights are required only for the WinDivert driver.
 - **Install:** unpack the release next to your `general*.bat` files and run `ZapretStudio.bat`.
 - **License:** © 2026 dadramus, all rights reserved. Free personal use and redistribution of unmodified copies allowed.
