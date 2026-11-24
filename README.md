@@ -73,25 +73,28 @@
 
 > Нужно: **Windows 10 или 11** и права администратора. Всё.
 
-**Шаг 1. Скачайте zapret.** Это движок, без него ничего не работает. Возьмите готовую сборку [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/releases) и распакуйте в папку без русских букв в пути, например `C:\Zapret`.
+**Шаг 1. Скачайте архив.** Со страницы [Releases](../../releases/latest):
 
-Внутри должны лежать `bin\`, `lists\`, `general*.bat` и `service.bat`.
+- `ZapretStudio-vX.Y-full.zip` — **с движком zapret**, ничего докачивать не надо (рекомендуется);
+- `ZapretStudio-vX.Y.zip` — только оболочка, если движок у вас уже есть.
 
-**Шаг 2. Скачайте Zapret Studio.** Со страницы [Releases](../../releases/latest) — архив `ZapretStudio-vX.Y.Z.zip`.
-
-**Шаг 3. Положите рядом.** Распакуйте архив в **ту же папку** `C:\Zapret`. Должно получиться так:
+**Шаг 2. Распакуйте** в папку без русских букв в пути, например `C:\Zapret`. Получится так:
 
 ```
 C:\Zapret\
 ├─ ZapretStudio.bat     ← запускать этот
-├─ core\
-│  ├─ ZapretStudio.ps1
-│  └─ ZapretStudio.vbs
-├─ bin\
-├─ lists\
-├─ general*.bat
-└─ service.bat
+└─ core\
+   ├─ ZapretStudio.ps1
+   ├─ ZapretStudio.vbs
+   ├─ bin\              ← движок zapret
+   ├─ lists\
+   ├─ strategies\       ← general*.bat
+   ├─ warp\
+   ├─ docs\
+   └─ service.bat
 ```
+
+**Шаг 3. Только для варианта без движка.** Распакуйте свою сборку [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/releases) в папку `core\` целиком — `bin\`, `lists\`, `general*.bat`, `service.bat`. Программа найдёт стратегии и в корне `core\`, и в `core\strategies\`, перекладывать руками ничего не нужно.
 
 **Шаг 4. Запустите `ZapretStudio.bat`** и нажмите «Да» в запросе администратора. Он нужен драйверу WinDivert — без него обход не работает.
 
@@ -158,7 +161,7 @@ C:\Zapret\
 <details>
 <summary><b>Ничего не запускается / «winws не запустился»</b> 🔧</summary>
 
-Проверьте: 1) запуск от имени администратора; 2) рядом лежат `general*.bat` и папка `bin`; 3) антивирус не блокирует папку; 4) не включён другой VPN или обход, конфликтующий с WinDivert. Подробности — на вкладке «Инструкция».
+Проверьте: 1) запуск от имени администратора; 2) в `core\strategies` лежат `general*.bat`, а в `core\bin` — движок; 3) антивирус не блокирует папку; 4) не включён другой VPN или обход, конфликтующий с WinDivert. Подробности — на вкладке «Инструкция».
 </details>
 
 <details>
@@ -216,9 +219,10 @@ C:\Zapret\
 
 **Zapret Studio** is a Windows launcher (PowerShell + WPF) for [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube): one-click launch, automatic strategy finder, connection monitoring, auto-recovery, Cloudflare WARP, tray icon and themes.
 
-- **Does not include** zapret, zapret-discord-youtube or WinDivert. The bundled WARP client (`usque`, unofficial) and Wintun driver live in `core\warp\`.
+- **Two archives:** `-full` bundles the zapret engine inside `core\` (nothing else to download); the plain one is shell-only.
+- **Bundled third-party:** the WARP client (`usque`, unofficial) and Wintun driver live in `core\warp\`. WinDivert and the engine are not part of this repository — they ship in the release archives.
 - **No telemetry, plain-text source.** Administrator rights are required only for the WinDivert driver.
-- **Install:** unpack the release next to your `general*.bat` files and run `ZapretStudio.bat`.
+- **Install:** unpack into a folder without Cyrillic in the path and run `ZapretStudio.bat`. Shell-only users drop their own zapret build into `core\`.
 - **License:** © 2026 dadramus, all rights reserved. Free personal use and redistribution of unmodified copies allowed.
 
 ---
