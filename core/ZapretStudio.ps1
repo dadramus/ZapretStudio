@@ -80,12 +80,6 @@ function Close-Splash {
     $script:Splash = $null
     try { $sp.Close = $true } catch { }
 }
-# диагностика заставки: пишем в %TEMP%\zs-splash.log, чтобы видеть, где именно спотыкается запуск
-$script:SpLog = Join-Path $env:TEMP 'zs-splash.log'
-try { Remove-Item -LiteralPath $script:SpLog -Force -ErrorAction SilentlyContinue } catch { }
-function Splash-Log([string]$m) {
-    try { Add-Content -LiteralPath $script:SpLog -Value ((Get-Date).ToString('HH:mm:ss.fff') + '  ' + $m) -Encoding UTF8 -ErrorAction Stop } catch { }
-}
 # случайные девизы: показываются на заставке и под статусом в главном окне (щелчок по девизу - следующий)
 $script:Slogans = @(
     'РКН, соса-а-а-а-ать!', 'Чекни пинг!', 'Ща хакнем Пентагон', 'Блокировки? Не, не слышал', 'Дискорд, к бою!',
@@ -974,14 +968,13 @@ function Splash-Go($s, [switch]$NoClose) {
     if (-not $s -or -not $s.Win -or $s.AnimRun -or $s.Done) { return }
     $w = $s.Win
     # заставка не показалась — играть нечего, сразу отдаём окно
-    if (-not $w.IsVisible) { Splash-Log 'splash not visible -> complete'; Complete-Splash; return }
+    if (-not $w.IsVisible) { Complete-Splash; return }
     $s.AnimRun = $true; $s.AnimAt = Get-Date
     if ($NoClose) { $s.Manual = $true }
-    Splash-Log ('intro start (needZapret=' + [bool]$s.NeedZapret + ', preview=' + [bool]$s.Preview + ')')
     try { if ($s.LoadSb) { $s.LoadSb.Stop($w) } } catch { }
     Splash-Hide $w.FindName('Boot'); Splash-Hide $w.FindName('LoadTrack')
     try { $w.FindName('Track').Visibility = 'Visible' } catch { }
-    try { if ($s.Sb) { $s.Sb.Begin($w, $true) } } catch { Splash-Log ('intro begin FAIL: ' + $_.Exception.Message) }
+    try { if ($s.Sb) { $s.Sb.Begin($w, $true) } } catch { }
     # закрытие по времени, а не по опросу: один таймер, один выстрел.
     # В последовательном режиме (NoClose) закрытием управляет вызывающий код.
     if ($NoClose) { return }
@@ -991,7 +984,7 @@ function Splash-Go($s, [switch]$NoClose) {
         $ct.Add_Tick({ param($tmS, $tmE) try { $tmS.Stop() } catch { }; Splash-Finish })
         $ct.Start()
         $s.EndTimer = $ct
-    } catch { Splash-Log ('end timer FAIL: ' + $_.Exception.Message) }
+    } catch { }
 }
 
 function Splash-Finish {
@@ -1005,18 +998,15 @@ function Splash-Finish {
             $w = $s.Win
             Splash-Hide $w.FindName('Boot'); Splash-Hide $w.FindName('Intro'); Splash-Hide $w.FindName('Track'); Splash-Hide $w.FindName('Prog'); Splash-Hide $w.FindName('LoadTrack')
             Splash-Show $w.FindName('Ask')
-            Splash-Log 'ask panel shown'
         }
         return
     }
-    Splash-Log 'intro done -> complete'
     Complete-Splash
 }
 
 function Complete-Splash {
     $s = $script:Sp
     if ($s.Done) { return }
-    Splash-Log 'Complete-Splash'
     Splash-Dismiss $s
     $script:Splash = $null
     if (-not (Test-ZapretPresent)) { try { Set-NoZapretMode } catch { } }
@@ -1062,7 +1052,6 @@ function Splash-Tick($s) {
     if (-not $s) { $s = $script:Sp }
     $w = $s.Win
     if (-not $w) { return }
-    if (-not $s.TickLogged) { $s.TickLogged = $true; Splash-Log 'first tick ok' }
     # в последовательном режиме заставкой управляет код запуска — опрос не вмешивается
     if ($s.Manual) { return }
     if ($s.Close) { if ($s.Preview) { Splash-Dismiss $s } else { Complete-Splash }; return }
@@ -1121,7 +1110,6 @@ function Splash-Tick($s) {
 
 function Start-SplashZS([string]$acc, [switch]$Preview) {
     try {
-        Splash-Log ('Start-SplashZS enter, preview=' + [bool]$Preview)
         if (-not $acc) { $acc = '#7C5CFF' }
         $fg = '#FFFFFF'
         try {
@@ -1406,14 +1394,11 @@ function Start-SplashZS([string]$acc, [switch]$Preview) {
         try { $s.Sb = $w.Resources['IntroSB'] } catch { }
         try { $s.LoadSb = $w.Resources['LoadSB'] } catch { }
         $w.Show()
-        Splash-Log 'splash window shown'
         $tm.Start()
-        Splash-Log 'splash timer started'
         # наружу отдаём состояние заставки, а не окно: только через него работают Ready/Close,
         # которыми Splash-Tick решает, когда играть вступление и когда закрываться
         $s
     } catch {
-        Splash-Log ('Start-SplashZS FAIL: ' + $_.Exception.Message)
         # окно уже могло показаться — тогда отдаём состояние, иначе заставка останется без управления
         try { if ($script:Sp -and $script:Sp.Win) { return $script:Sp } } catch { }
         return $null
@@ -8664,7 +8649,7 @@ try {
             }
         }
     }
-} catch { Splash-Log ('final splash FAIL: ' + $_.Exception.Message) }
+} catch { }
 [void]$app.Run($Win)
 Save-Settings
 try { $script:Mutex.ReleaseMutex() } catch { }
