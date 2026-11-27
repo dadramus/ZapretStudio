@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/banner.svg" alt="Zapret Studio — обход блокировок" width="100%">
+<img src="docs/banner.png" alt="Zapret Studio — уроборос: змея, пожирающая свой хвост" width="100%">
 
 # Zapret Studio
 
